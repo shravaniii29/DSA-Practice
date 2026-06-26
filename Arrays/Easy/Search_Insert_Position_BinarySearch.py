@@ -1,6 +1,7 @@
 #In leetcode its given that the array is sorted in ascending order and we have to find the index of the target value or the index where it would be if it were inserted in order.
 # We can use binary search to achieve this in O(log n) time complexity.
 # So its a Binary Search problem.
+
 from typing import List
 class Solution:
     def searchInsert(self, nums: List[int], target: int) -> int:

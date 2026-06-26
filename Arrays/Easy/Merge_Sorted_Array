@@ -1,0 +1,41 @@
+#Leetcode Problem: 88. Merge Sorted Array
+# Approach:
+# Since nums1 has extra space at the end, merge the arrays from back to front.
+#
+# Use three pointers:
+# i -> last valid element in nums1
+# j -> last element in nums2
+# k -> last position of nums1
+#
+# Compare nums1[i] and nums2[j].
+# Place the larger element at nums1[k] and move the corresponding pointer.
+#
+# After one array is exhausted, copy any remaining elements from nums2.
+# Remaining elements of nums1 are already in correct position.
+#
+# Time Complexity: O(m + n)
+# Space Complexity: O(1)
+from typing import List
+class Solution:
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+
+        i = m - 1     # = 2 => index of last valid element in nums1
+        j = n - 1     # = 2 => index of last element in nums2
+        k = m + n - 1      # last position in nums1 since length of nums1 is given as m+n
+
+        while i >= 0 and j >= 0:
+
+            if nums1[i] > nums2[j]:
+                nums1[k] = nums1[i]
+                i -= 1
+            else:
+                nums1[k] = nums2[j]
+                j -= 1
+
+            k -= 1
+
+        # copy remaining nums2 elements
+        while j >= 0:
+            nums1[k] = nums2[j]
+            j -= 1
+            k -= 1
