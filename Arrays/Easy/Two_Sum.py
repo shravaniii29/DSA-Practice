@@ -11,7 +11,7 @@ Space Complexity: O(n)
 
 class Solution:
     def twoSum(self, nums, target):
-        visited_numbers = {}
+        visited_numbers = {} # val : index
 
         for i in range(len(nums)):
             needed_number = target - nums[i]
@@ -19,4 +19,4 @@ class Solution:
             if needed_number in visited_numbers:
                 return [visited_numbers[needed_number], i]
 
-            visited_numbers[nums[i]] = i
+            visited_numbers[nums[i]] = i #val : index
