@@ -1,6 +1,10 @@
-arr = [10, 5, 8, 20, 15]
+# Find Second Largest Element in an Array
 
-largest = second = float('-inf')
+n = int(input())
+arr = list(map(int, input().split()))
+
+largest = float('-inf')
+second = float('-inf')
 
 for num in arr:
     if num > largest:
@@ -9,4 +13,7 @@ for num in arr:
     elif num > second and num != largest:
         second = num
 
-print("Second Largest:", second)
+if second == float('-inf'):
+    print("No second largest element")
+else:
+    print(second)
