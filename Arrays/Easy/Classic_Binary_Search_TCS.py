@@ -1,5 +1,6 @@
+# TCS NQT easy coding question - appeared in 10th June 2026 NQT
 # Implement a sorted Array and return the index of the first occurrence of the target value, if the element isn't in the array, return -1
-
+# Since its given the array is sorted - we will use Binary Search ( otherwise in case of unsorted array, we would've used Linear search )
 class Solution:
     def search(self, nums, target):
         left = 0
