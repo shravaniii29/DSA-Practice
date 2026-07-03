@@ -1,3 +1,5 @@
+# Implement a sorted Array and return the index of the first occurrence of the target value, if the element isn't in the array, return -1
+
 class Solution:
     def search(self, nums, target):
         left = 0
